@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import Carousel from "react-material-ui-carousel";
+import { Box, Typography, Grid, Card, CardContent } from "@mui/material";
 
 const testimonials = [
   {
@@ -23,49 +22,60 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <Box sx={{ p: 4, backgroundColor: "background.default" }}>
+    <Box sx={{ py: 6, backgroundColor: "background.default" }}>
       <Typography
         variant="h4"
         component="h2"
         sx={{
           fontWeight: "bold",
           textAlign: "center",
-          mb: 4,
+          mb: 6,
         }}
       >
         What Our Customers Say
       </Typography>
-      <Carousel
-        indicators={false}
-        navButtonsAlwaysInvisible={false}
-        animation="slide"
-        autoPlay={true}
-        interval={4000}
-      >
+      <Grid container spacing={4} justifyContent="center">
         {testimonials.map((item, index) => (
-          <Box
-            key={index}
-            sx={{
-              textAlign: "center",
-              p: 2,
-              backgroundColor: "background.paper",
-              borderRadius: "8px",
-              boxShadow: 3,
-            }}
-          >
-            <Typography
-              variant="h6"
-              component="h3"
-              sx={{ mb: 2, fontWeight: "bold" }}
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Card
+              sx={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                backgroundColor: "background.paper",
+                borderRadius: "16px",
+                boxShadow: 5,
+                padding: 2,
+              }}
             >
-              {item.name}
-            </Typography>
-            <Typography variant="body1" sx={{ color: "text.secondary" }}>
-              {item.text}
-            </Typography>
-          </Box>
+              <CardContent>
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  sx={{
+                    mb: 2,
+                    fontWeight: "bold",
+                    color: "primary.main",
+                    textAlign: "center",
+                  }}
+                >
+                  {item.name}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "text.secondary",
+                    textAlign: "center",
+                  }}
+                >
+                  {item.text}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         ))}
-      </Carousel>
+      </Grid>
     </Box>
   );
 };
