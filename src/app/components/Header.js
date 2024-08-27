@@ -13,7 +13,7 @@ const Header = () => {
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 1000, // Ensure the header is above hero content
+        zIndex: 1000,
       }}
     >
       <Toolbar
@@ -41,6 +41,7 @@ const Header = () => {
               textTransform: "none",
               fontSize: "1rem",
               marginLeft: 2,
+              marginRight: 2,
               "&:hover": {
                 backgroundColor: "rgba(255, 255, 255, 0.1)",
               },
@@ -50,6 +51,7 @@ const Header = () => {
               Home
             </Link>
           </Button>
+          <span style={{ color: "#ffffff", margin: "0 0.5rem" }}>|</span>
           <Button
             color="inherit"
             sx={{
@@ -57,6 +59,7 @@ const Header = () => {
               textTransform: "none",
               fontSize: "1rem",
               marginLeft: 2,
+              marginRight: 2,
               "&:hover": {
                 backgroundColor: "rgba(255, 255, 255, 0.1)",
               },
@@ -69,6 +72,7 @@ const Header = () => {
               About
             </Link>
           </Button>
+          <span style={{ color: "#ffffff", margin: "0 0.5rem" }}>|</span>
           <Button
             color="inherit"
             sx={{
@@ -76,6 +80,7 @@ const Header = () => {
               textTransform: "none",
               fontSize: "1rem",
               marginLeft: 2,
+              marginRight: 2,
               "&:hover": {
                 backgroundColor: "rgba(255, 255, 255, 0.1)",
               },
@@ -86,25 +91,6 @@ const Header = () => {
               style={{ textDecoration: "none", color: "#ffffff" }}
             >
               Products
-            </Link>
-          </Button>
-          <Button
-            color="inherit"
-            sx={{
-              color: "#ffffff",
-              textTransform: "none",
-              fontSize: "1rem",
-              marginLeft: 2,
-              "&:hover": {
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-              },
-            }}
-          >
-            <Link
-              href="#contact"
-              style={{ textDecoration: "none", color: "#ffffff" }}
-            >
-              Contact
             </Link>
           </Button>
         </div>
